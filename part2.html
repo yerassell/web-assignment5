@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Part 2</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            <a href="index.html">Part 1</a>
+        </div>
+        <div class="nav">
+            <a href="part2.html">Part 2</a>
+        </div>
+        <div class="nav">
+            <a href="part3.html">Part 3</a>
+        </div>
+        <div class="nav">
+            <a href="part4.html">Part 4</a>
+        </div>
+    </nav>
+    <div id="task2" class="blocks">
+        <p class="taskNum">Task2</p>
+        <p id="paragraph1">This is initial paragraph</p>
+        <button class="btn" onclick="document.getElementById('paragraph1').innerText = 'This is changed text'">Click me</button>
+    </div>
+    <div id="task3" class="blocks">
+        <p class="taskNum">Task3</p>
+        <p id="paragraph2">This is initial paragraph</p>
+        <button class="btn" onclick="document.getElementById('task3').style.backgroundColor = 'pink'">Change bg-color</button>
+        <button class="btn" onclick="document.getElementById('paragraph2').style.fontSize = '18px'">Change font size</button>
+    </div>
+    <div id="task4" class="blocks">
+        <p class="taskNum">Task4</p>
+        <ul id="items">Items
+            
+        </ul>
+        <button class="btn" id="add">Add new list</button>
+        <button class="btn" id="remove">Remove a list</button>
+
+    </div>
+    <script>
+        let list = document.getElementById("items");
+
+        let counter = 0; 
+        document.getElementById("add").addEventListener("click", () => {
+        counter++;
+        let li = document.createElement("li");
+        li.textContent = "Item " + counter;
+        list.appendChild(li);
+        });
+
+        document.getElementById("remove").addEventListener("click", () => {
+        if (list.lastElementChild) {
+            list.lastElementChild.remove();
+            counter--;
+        }
+        });
+    </script>
+</body>    
+</html>

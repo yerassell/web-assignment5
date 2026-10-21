@@ -45,14 +45,14 @@
         let list = document.getElementById("items");
 
         let counter = 0; 
-        document.getElementById("add").addEventListener("click", () => {
+        document.getElementById("add").addEventListener("click", function() {
         counter++;
         let li = document.createElement("li");
         li.textContent = "Item " + counter;
         list.appendChild(li);
         });
 
-        document.getElementById("remove").addEventListener("click", () => {
+        document.getElementById("remove").addEventListener("click", function() {
         if (list.lastElementChild) {
             list.lastElementChild.remove();
             counter--;
